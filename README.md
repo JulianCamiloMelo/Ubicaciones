@@ -15,9 +15,12 @@ Programa de Ubicaciones
   
 3. En el desarrollo del API se hace la configuración del pom.xml, configuración de la persistencia con JPA, creación de archivos de idiomas,
     archivos de face-config para el direccionamiento de cada vista, y la implementación de estilos a cada una de ellas.
-4. Finalmente para el manejo de la tabla location se crearon el respectivo controlador, helpers, el modelo (clase location), la persistencia de la clase y el servicio para el control
+4. Para el manejo de la tabla location se crearon el respectivo controlador, helpers, el modelo (clase location), la persistencia de la clase y el servicio para el control
     de la información de esta clase contra la base de datos.
-    
+5. Para la creación del frontend del aplicativo se hizo uso de archivos xhtml dentro del proyecto en netbeans, se realizó de esta manera ya que personalmente los conocimientos en    Angular y la documentación que se realizó sobre este no fueron los esperados en el tiempo de la prueba para poder realizar esta implementación.
+
+    Dentro de estos archivos xhtml se hizo uso de primefaces para la aplicación de los estilos con manejo de css y bootstrap. Adicional a ello se implementa facelets para las etiquetas de nuestra API y el manejo de lenguajes según queramos.
+
     
    
 # Descripción de funcionalidad
