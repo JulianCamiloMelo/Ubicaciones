@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: co.entrevista.bancobta.locationtest.LocationTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.009 sec <<< FAILURE!
+testEliminarLocation(co.entrevista.bancobta.locationtest.LocationTest)  Time elapsed: 0.002 sec  <<< ERROR!
+java.lang.NullPointerException
+	at co.entrevista.bancobta.controller.LocationCtrl.eliminar(LocationCtrl.java:56)
+	at co.entrevista.bancobta.locationtest.LocationTest.testEliminarLocation(LocationTest.java:37)
+
