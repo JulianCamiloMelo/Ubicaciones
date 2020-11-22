@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<faces-config version="2.3"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd">
+    
+    <navigation-rule id="1">
+        <description>Direccionamiento</description>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+<!--Direccionamientos de Clasificaciones-->
+    <navigation-rule id="2">
+        <description>Direccionamiento</description>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>listarClasificacion</from-outcome>
+            <to-view-id>/pages/clasificacion/listarClasificacion.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+<!--Direccionamientos de Estados-->   
+    <navigation-rule id="3">
+        <description>Direccionamiento</description>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>listarEstado</from-outcome>
+            <to-view-id>/pages/estado/listarEstado.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+<!--Direccionamientos de Generos-->    
+    <navigation-rule id="4">
+        <description>Direccionamiento</description>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>listarGenero</from-outcome>
+            <to-view-id>/pages/genero/listarGenero.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+<!--Direccionamientos de Peliculas-->    
+    <navigation-rule id="5">
+        <description>Direccionamiento</description>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>listarPelicula</from-outcome>
+            <to-view-id>/pages/pelicula/listarPelicula.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+<!--Direccionamientos de Peliculas-->    
+    <navigation-rule id="13">
+        <description>Direccionamiento</description>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>listarPeliculaCartelera</from-outcome>
+            <to-view-id>/pages/pelicula/listarPeliculaCatelera.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+<!--Direccionamientos de Salas-->            
+    <navigation-rule id="6">
+        <description>Direccionamiento</description>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>listarSala</from-outcome>
+            <to-view-id>/pages/sala/listarSala.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+<!--Direccionamientos de Usuarios-->
+    <navigation-rule id="7">
+        <description>Direccionamiento</description>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>listarLocation</from-outcome>
+            <to-view-id>/pages/location/listarLocation.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+<!--Direccionamientos Pagina Principal de Administrador-->    
+    <navigation-rule id ="8">
+        <description>Direccionamiento</description>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>principal</from-outcome>
+            <to-view-id>/pages/principal/principal.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+<!--Direccionamientos Pagina Principal de Usuarios-->    
+    <navigation-rule id ="9">
+        <description>Direccionamiento</description>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>principalUsuario</from-outcome>
+            <to-view-id>/pages/principal/principalUsuario.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>        
+
+<!--Direccionamientos de Actores-->            
+    <navigation-rule id ="10">
+        <description>Direccionamiento</description>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>listarActor</from-outcome>
+            <to-view-id>/pages/actor/listarActor.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+<!--Direccionamientos de Actores Peliculas-->            
+    <navigation-rule id ="11">
+        <description>Direccionamiento</description>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>listarActorPelicula</from-outcome>
+            <to-view-id>/pages/actorPelicula/listarActorPelicula.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+
+<!--Direccionamientos de Programaciones-->            
+    <navigation-rule id ="12">
+        <description>Direccionamiento</description>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>listarProgramacion</from-outcome>
+            <to-view-id>/pages/programacion/listarProgramacion.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+<!--Configuración de Internacionalización-->        
+    <application>
+        <locale-config>
+            <default-locale>es</default-locale>
+        </locale-config>
+        <resource-bundle>
+            <base-name>mensajes</base-name>
+            <var>msgs</var>
+        </resource-bundle>
+        <message-bundle>jsf</message-bundle>
+    </application>
+    
+</faces-config>

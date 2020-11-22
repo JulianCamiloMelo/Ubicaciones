@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <h:outputStylesheet name="assets/default.css"></h:outputStylesheet>
+        <h:outputStylesheet name="assets/fonts.css"></h:outputStylesheet>
+        <h:outputStylesheet name="assets/bootstrap/css/bootstrap.min.css"></h:outputStylesheet>
+        <title>#{msgs['principalForm.titulo']}</title>
+        <h:outputStylesheet library="css" name="estilos.css"></h:outputStylesheet>
+    </h:head>
+    <h:body>
+        <div id="page-content">
+        <div id="wrapper">
+            <ui:insert name="navbar">
+                <h:form>
+                    <div id="header-wrapper">
+                        <div id="header" class="container">
+                            <div id="logo">
+                                <!--<h1><a href="./pages/principal/principal.xhtml">#{msgs['principalForm.inicio']}</a></h1>-->
+                                <h1><a>#{msgs['principalForm.inicio']}</a></h1>
+                            </div>
+                            <div id="menu">
+                                <ul>                                    
+                                    <li><h:commandLink action="#{locationCtrl.Listar}" value="#{msgs['principalForm.programacion']}"></h:commandLink></li>
+                                    <li><h:commandLink action="index" value="#{msgs['principalForm.salir']}"/></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </h:form>
+            </ui:insert>
+            <ui:insert name="banner">
+                <div id="banner">
+                    <div class="container">
+                        <div class="title">
+                            <h2>#{msgs['principalForm.titulo']}</h2>
+                            <span class="byline">#{msgs['principalForm.descripcion']}</span> </div>
+                        <!--<ul class="actions">
+                            <li><a href="#" class="button">{msgs['principalForm.ver']}</a></li>
+                        </ul>-->
+                        <br/>
+                    </div>
+                </div>
+            </ui:insert>            
+        </div>
+            </div>
+        <footer id="footer" class="py-4 bg-dark text-white-50">
+            <div class="container text-center" style="align-content: flex-end">
+      <small>#{msgs['principalForm.webSite']}</small>
+    </div>
+  </footer>
+    </h:body>
+</html>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>#{msgs['locationsListForm.titulo']}</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../../WEB-INF/plantillas/plantilla.xhtml">
+            <ui:define name="banner">
+                <p:ajaxStatus style="width: 16px;height: 16px;" id="ajaxStatusPanel">
+                    <f:facet name="start">
+                        <h:graphicImage library="images" name="ajaxloading.gif" />
+                    </f:facet>
+
+                    <f:facet name="complete">
+                        <h:outputText value="" />
+                    </f:facet>
+
+                </p:ajaxStatus>
+
+                <h:form id="locationsListForm" prependId="true">
+                    <p:growl id="messages" showDetail="true" />
+                    <p:messages/>
+
+                    <p:dataTable id="locationsDataTable" value="#{locationCtrl.locations}" var="location" editable="true" rowKey="#{location.idLocation}" 
+                                 selection="#{locationCtrl.location}" selectionMode="single">
+
+                        <f:facet name="header">
+                            <h2>#{msgs['locationsListForm.titulo']}</h2>
+                        </f:facet>
+
+                        <p:column headerText="#{msgs['locationsListForm.id']}">
+                            <h:outputText value="#{location.idLocation}"/>
+                        </p:column>
+
+                        <p:column headerText="#{msgs['locationsListForm.nombre']}">
+                            <p:cellEditor>
+                                <f:facet name="output">
+                                    <h:outputText value="#{location.name}" />
+                                </f:facet>
+                                <f:facet name="input">
+                                    <p:inputText value="#{location.name}" />
+                                </f:facet>
+                            </p:cellEditor>
+                        </p:column>
+
+                        <p:column headerText="#{msgs['locationsListForm.area']}">
+                            <p:cellEditor>
+                                <f:facet name="output">
+                                    <h:outputText value="#{location.area_m2}" />
+                                </f:facet>
+                                <f:facet name="input">
+                                    <p:inputText value="#{location.area_m2}" />
+                                </f:facet>
+                            </p:cellEditor>
+                        </p:column>
+
+                        <f:facet name="footer">
+                            <p:commandButton value="#{msgs['locationsListForm.agregar']}" actionListener="#{locationCtrl.reiniciarLocation}"
+                                             update=":dialogForm" oncomplete="PF('locationDialog').show()" /> 
+                            <p:spacer height="5px"/>
+                            <p:commandButton value="#{msgs['locationsListForm.regresar']}" action="principal" />                    
+                        </f:facet>
+
+                        <p:column headerText="#{msgs['locationsListForm.opciones']}" style="width: 50px">
+                            <p:rowEditor/>
+                        </p:column>
+
+                        <p:ajax event="rowEdit" listener="#{locationCtrl.editListener}"/>
+
+                    </p:dataTable>
+
+                    <p:contextMenu for="locationsDataTable">
+                        <p:menuitem value="#{msgs['locationsListForm.eliminar']}" update="locationsListForm:locationsDataTable" icon="ui-icon-close" 
+                                    actionListener="#{locationCtrl.eliminarLocation}"/>
+                    </p:contextMenu>
+
+                </h:form>
+
+                <p:dialog id="locationDlg" widgetVar="locationDialog" header="#{msgs['locationsListForm.agregarUsuario']}" modal="true" showEffect="fade" hideEffect="fade" 
+                          resizable="false">
+                    <h:form id="dialogForm">
+                        <p:outputPanel id="locationDetail" style="text-align: center">
+                            <p:panelGrid id="display" columns="2" columnClasses="label, value" >
+                                <h:outputText style="color: black" value="#{msgs['locationsListForm.nombre']}" />
+                                <h:inputText value="#{locationCtrl.location.name}" />      
+                                <h:outputText style="color: black" value="#{msgs['locationsListForm.area']}" />
+                                <h:inputText value="#{locationCtrl.location.area_m2}" />
+                                <f:facet name="footer" >
+                                    <p:commandButton value="#{msgs['locationsListForm.agregar']}" actionListener="#{locationCtrl.agregarLocation}" 
+                                                     update="display,:locationsListForm:locationsDataTable" oncomplete="PF('locationDialog').hide();" />
+                                </f:facet>
+                            </p:panelGrid>
+                        </p:outputPanel>
+                    </h:form>
+                </p:dialog>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

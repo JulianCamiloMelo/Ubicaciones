@@ -1,0 +1,9 @@
+co\entrevista\bancobta\service\LocationServiceImpl.class
+co\entrevista\bancobta\helper\LocationHelper.class
+co\entrevista\bancobta\persistence\LocationDao.class
+co\entrevista\bancobta\model\Location.class
+co\entrevista\bancobta\service\LocationService.class
+co\entrevista\bancobta\controller\LocationCtrl.class
+co\entrevista\bancobta\persistence\LocationDaoImpl.class
+beans\configuracion\ConfigurationJSF.class
+co\entrevista\bancobta\controller\LoginCtrl.class
